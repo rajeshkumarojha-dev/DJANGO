@@ -12,3 +12,13 @@ def show_data(request):
     ]
     response=render(request,'app1/index.html',context={"emp_data":emp_data})
     return response
+
+def displayData_upper(request):
+    names=['rajesh','radha','puja','sradha']
+    response = render(request,'app1/upper.html',context={"names":names})
+    return response
+    
+def display_data(request):
+    course=['python','java','sql',['HTML','CSS','JS']]
+    response = render(request,'app1/list.html',context={'course':course})
+    return  response

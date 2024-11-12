@@ -1,0 +1,18 @@
+{%extends 'app1/index.html'%} 
+{%block result%}
+{{block.super}}
+<table border="1" width="50%">
+  <tr>
+    <th>CAPITALIZE</th>
+    <th>UPPER</th>
+    <th>LOWER</th>
+  </tr>
+  {%for data in names%}
+  <tr>
+    <td>{{data|title}}</td>
+    <td>{{data|upper}}</td>
+    <td>{{data|lower}}</td>
+  </tr>
+  {%endfor%}
+</table>
+{%endblock%}

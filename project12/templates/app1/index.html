@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    {%block content%}
     <table border="1">
         <tr>
             <th>EMP_ID</th>
@@ -20,5 +21,13 @@
         </tr>
         {%endfor%}
     </table>
+    <div>
+        {%block result%}
+        <a href="/upper">case</a>
+        <a href="/">Home</a>
+        {%endblock%}
+    </div>
+    {%endblock%}
+
 </body>
 </html>
