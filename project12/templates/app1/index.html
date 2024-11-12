@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>EMP_ID</th>
+            <th>EMP_NAME</th>
+            <th>SALERY</th>
+        </tr>
+        {%for data in emp_data|dictsortreversed:'id'%}
+        <tr>
+            <td>{{data.id}}</td>
+            <td>{{data.empName}}</td>
+            <td>{{data.salery}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="text">
+        <h1>WELCOME TO INDEX AND CSS FILES</h1>
+        <table border="1">
+            <tr>
+                <th>product name</th>
+                <th>price</th>
+                <th>image</th>
+            </tr>
+            {%for pname,data in product_data.items%}
+            <tr>
+                <td>{{pname}}</td>
+                <td>{{data.0}}</td>
+                <td><img src="{%static 'images/'%}{{data.1}}"></td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+</body>
+</html>

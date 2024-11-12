@@ -1,0 +1,33 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/style.css'%}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav>
+        <a href="/">Home</a>
+        <a href="/java">Java</a>
+        <a href="/python">Python</a>
+      </nav>
+      {%block content%}
+      <h1>Welcome to home page</h1>
+      <div class="container">
+        <h1>ADDING NUMBERS</h1>
+        <form action="/add">
+          Number <input type="number" name="num1" /> 
+          Number <input type="number" name="num2" />
+          <input type="submit" value="add" class="btn"/>
+        </form>
+        {%block result%}
+            <p>Result is</p>
+        {%endblock%}
+      </div>
+      {%endblock%}
+    </div>
+  </body>
+</html>
