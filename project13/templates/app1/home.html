@@ -1,0 +1,40 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/style.css'%}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/product">ImageTable</a>
+      <a href="/filter">Filter</a>
+    </nav>
+    {%block content%}
+    <h1>This is HOME page</h1>
+    <div class="wrapper">
+      <div class="cal">
+        <form action="/cal">
+          <div class="label">
+            <label for="">NUMBER:1 </label>
+            <input type="number" name="num1" />
+          </div>
+          <div class="label">
+            <label for="">NUMBER:2 </label>
+            <input type="number" name="num2" />
+          </div>
+          <input type="submit" value="submit" class="btn"/>
+        </form>
+        <div class="res">
+          {%block result%}
+          <!-- <h2>RESULT IS:</h2> -->
+          {%endblock%}
+        </div>
+      </div>
+    </div>
+    {%endblock%}
+  </body>
+</html>

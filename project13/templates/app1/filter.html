@@ -1,0 +1,55 @@
+{%extends 'app1/home.html'%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <title>Document</title>
+</head>
+<body>
+    {%block content%}
+    <div class="content">
+        <div class="letter-case">
+            <table border="1">
+                <caption><H3>CONVERT TO UPPER & LOWER</H3></caption>
+                <tr>
+                    <th>CAPITALISE</th>
+                    <th>UPPER</th>
+                    <th>LOWER</th>
+                </tr>
+                {%for name in names%}
+                <tr>
+                    <td>{{name|title}}</td>
+                    <td>{{name|upper}}</td>
+                    <td>{{name|lower}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+        <div class="sort">
+            <table border="1">
+                <caption><h3>SORTED DICT DATA</h3></caption>
+                <tr>
+                    <th>EMP_ID</th>
+                    <th>NAME</th>
+                    <th>SALERY</th>
+                </tr>
+                {%for data in emp_data|dictsort:'sal'%}
+                <tr>
+                    <td>{{data.empNo}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.sal}}</td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+        <div class="list">
+            <caption><h3>LISTING THE DATA</h3></caption>
+            <h4>{{course|unordered_list}}</h4>
+        </div>
+    </div>
+    {%endblock%}
+</body>
+</html>
