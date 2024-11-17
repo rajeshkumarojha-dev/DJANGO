@@ -3,12 +3,12 @@ from django.http import HttpResponse
 from app1.models import Users
 # Create your views here.
 def resister(request):
-    name=request.GET['name']
+    names=request.GET['names']
     uname=request.GET['uname']
     pwd=request.GET['pwd']
-    u=Users(name=name,uname=uname,password=pwd)
+    u=Users(name=names,uname=uname,passward=pwd)
     u.save()
-    response = HttpResponse("Resister saved")
+    response=HttpResponse("User Resistered.....")
     return response
 
 def signUp(request):
