@@ -1,0 +1,67 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{%static 'css/style.css'%}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sign UP</h1>
+      <div class="wrapper">
+        <form action="/register">
+          <div class="content">
+            <div class="form">
+              <div class="name">
+                <label for="">First Name</label>
+                <input type="text" name="fname" required/>
+              </div>
+              <div class="name">
+                <label for="">Last Name</label>
+                <input type="text" name="lname" required/>
+              </div>
+            </div>
+          </div>
+          <div class="content">
+            <label for="">Phone Number</label>
+            <input type="number" name="phone" required/>
+          </div>
+          <div class="content">
+            <label for="">Email</label>
+            <input type="email" name="email" required/>
+          </div>
+          <div class="content">
+            <label for="">Password</label>
+            <input type="password" name="password" required/>
+          </div>
+          <div class="btn">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="table">
+        <table border="1">
+          <tr>
+            <th>FIRST NAME</th>
+            <th>LAST NAME</th>
+            <th>PHONE</th>
+            <th>EMAIL</th>
+            <th>PASSWORD</th>
+          </tr>
+          {%for data in qs%}
+          <tr>
+            <td>{{data.fname}}</td>
+            <td>{{data.lname}}</td>
+            <td>{{data.phone}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.password}}</td>
+          </tr>
+          {%endfor%}
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

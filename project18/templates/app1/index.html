@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="filter">
+        <h1>FILTER DATA</h1>
+        <form action="/filter_data">
+        <div class="filter-data">
+            <label for="">Job</label>
+            <select name="job" id="">
+                <option value="IT">IT</option>
+                <option value="TESTING">TESTING</option>
+                <option value="HR">HR</option>
+                <option value="DEVELOPER">Developer</option>
+                <option value="all">All</option>
+            </select>
+            <div class="btn">
+                <button type="submit">View</button>
+            </div>
+        </div>
+    </form>
+    </div>
+    {%block table%}
+
+    {%endblock%}
+</body>
+</html>
