@@ -20,5 +20,8 @@ from app1.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home),
-    path('filter_data/',filter_data)
+    path('filter_data/',filter_data),
+    path('update_emp/',update_emp),
+    path('update/',update),
+    path('aggregate/',aggregate)
 ]
