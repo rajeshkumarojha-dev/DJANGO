@@ -1,0 +1,29 @@
+{%extends 'app1/index.html'%} {%block content%}
+<form action="/find">
+  <table>
+    <tr>
+      <td>Roll no.</td>
+      <td><input type="text" name="rno" /></td>
+    </tr>
+    <tr>
+      <td><input type="submit" value="find" /></td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <th>Roll no.</th>
+      <th>Name</th>
+      <th>Subject1</th>
+      <th>Subject2</th>
+      <th>Result</th>
+    </tr>
+    <tr>
+      <td>{{student.rollno}}</td>
+      <td>{{student.name}}</td>
+      <td>{{student.sub1}}</td>
+      <td>{{student.sub2}}</td>
+      <td>{{result}}</td>
+    </tr>
+  </table>
+</form>
+{{msg}} {%endblock%}

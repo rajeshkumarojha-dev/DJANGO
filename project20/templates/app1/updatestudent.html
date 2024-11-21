@@ -1,0 +1,21 @@
+{%extends 'app1/index.html'%} {%block content%}
+<form action="/update">
+  <table>
+    <tr>
+      <td>Roll no.</td>
+      <td><input type="text" name="rno" /></td>
+    </tr>
+      <td>Subject1</td>
+      <td><input type="text" name="sub1" /></td>
+    </tr>
+    <tr>
+      <td>Subject2</td>
+      <td><input type="text" name="sub2" /></td>
+    </tr>
+    <tr>
+      <td><input type="submit" value="update" /></td>
+    </tr>
+  </table>
+</form>
+{{msg}}
+{%endblock%}
