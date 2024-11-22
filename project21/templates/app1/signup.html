@@ -1,3 +1,4 @@
+{%extends 'app1/index.html'%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -6,26 +7,80 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="/signup">
-      <table>
-        <tr>
-          <td>Name</td>
-          <td><input type="text" name="name" /></td>
-        </tr>
-        <tr>
-          <td>UserName</td>
-          <td><input type="text" name="uname" /></td>
-        </tr>
-        <tr>
-          <td>Password</td>
-          <td><input type="text" name="pwd" /></td>
-        </tr>
-        <tr>
-          <td><input type="submit" value="signup" /></td>
-        </tr>
-      </table>
-    </form>
-    {{msg}}<br>
-    <a href="/">Home</a>
+    {%block content%}
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        box-shadow: 0 0 20px #202020;
+        border-radius: 20px;
+        width: 340px;
+        height: 340px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-block: 15px;
+      }
+      h2 {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
+      label {
+        font-size: 18px;
+        font-weight: 700;
+        margin-right: 10px;
+      }
+      input {
+        font-size: 16px;
+      }
+      button {
+        padding: 10px 20px;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        background-color: orangered;
+        color: white;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+      h6 {
+        margin-top: 2rem;
+        padding: 10px;
+        border-radius: 20px;
+        font-size: 25px;
+      }
+    </style>
+    <div class="content">
+      <form action="/signup">
+        <h2>Sign_UP</h2>
+        <table>
+          <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" /></td>
+          </tr>
+          <tr>
+            <td>UserName</td>
+            <td><input type="text" name="uname" /></td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td><input type="text" name="pwd" /></td>
+          </tr>
+        </table>
+        <div class="btn">
+          <button type="submit" value="signup">signup</button>
+        </div>
+      </form>
+    </div>
+    {{msg}} {%endblock%}
   </body>
 </html>

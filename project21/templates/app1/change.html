@@ -1,3 +1,4 @@
+{%extends 'app1/index.html'%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,26 +6,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  {%block content%}
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+    .wrap{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .content {
+      box-shadow: 0 0 20px #202020;
+      border-radius: 20px;
+      width: 340px;
+      height: 340px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-block: 15px;
+    }
+    h2 {
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+    label {
+      font-size: 18px;
+      font-weight: 700;
+      margin-right: 10px;
+    }
+    input {
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      border-radius: 10px;
+      outline: none;
+      border: none;
+      background-color: orangered;
+      color: white;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    h6 {
+      margin-top: 2rem;
+      padding: 10px;
+      border-radius: 20px;
+      font-size: 25px;
+    }
+    .btn{
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+  </style>
   <body>
-    <form action="/change">
-      <table>
-        <tr>
-          <td>User Name</td>
-          <td><input type="text" name="uname" /></td>
-        </tr>
-        <tr>
-          <td>Old password</td>
-          <td><input type="text" name="pwd" /></td>
-        </tr>
-        <tr>
-          <td>New Password</td>
-          <td><input type="text" name="npwd" /></td>
-        </tr>
-        <tr>
-          <td><input type="submit" name="Change" /></td>
-        </tr>
-      </table>
-    </form>
-    {{msg}}
+    <div class="wrap">
+      <div class="content">
+        <form action="/change">
+          <h2>Change password</h2>
+          <table>
+            <tr>
+              <td>User Name</td>
+              <td><input type="text" name="uname" /></td>
+            </tr>
+            <tr>
+              <td>Old password</td>
+              <td><input type="text" name="pwd" /></td>
+            </tr>
+            <tr>
+              <td>New Password</td>
+              <td><input type="text" name="npwd" /></td>
+            </tr>  
+          </table>
+          <div class="btn">
+            <button type="submit" value="change">Change Password</button>
+          </div>
+        </form>
+      </div>
+      <h6>{{msg}}</h6>
+    </div>
+{%endblock%}
   </body>
 </html>

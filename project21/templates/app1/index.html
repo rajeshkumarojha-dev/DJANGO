@@ -47,9 +47,37 @@
     .forgot{
       margin-top: 2rem;
     }
+    nav{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: black;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 60px;
+    }
+    nav a{
+        margin-inline: 20px;
+        text-decoration: none;
+        font-size: 20px;
+        color: white;
+        text-transform: uppercase;
+    }
+    span{
+        color: orangered;
+    }
   </style>
   <body>
     <div class="wrapper">
+      <nav>
+        <a href="/signintemp">Sign_In</a>
+        <a href="/signtemp">Sign_UP</a>
+        <a href="/deletetemp">Delete</a>
+    </nav>
+    {%block content%}
       <div class="container">
         <h1>Sign_up and Sign_In</h1>
         <div class="btn">
@@ -60,6 +88,7 @@
           </div>
         </div>
       </div>
+      {%endblock%}
     </div>
   </body>
 </html>

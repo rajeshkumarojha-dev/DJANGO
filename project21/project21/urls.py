@@ -25,5 +25,7 @@ urlpatterns = [
     path('signintemp/',signin_temp),
     path('signin/',signin),
     path('changetemp/',change_temp),
-    path('change/',change)
+    path('change/',change),
+    path('deletetemp/',delete_temp),
+    path('delete/',delete)
 ]

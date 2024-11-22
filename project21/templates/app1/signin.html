@@ -1,3 +1,4 @@
+{%extends 'app1/index.html'%}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,25 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      height: 100vh;
-    }
-  </style>
   <body>
-    <div class="wrapper">
+    {%block content%}
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        box-shadow: 0 0 20px #202020;
+        border-radius: 20px;
+        width: 340px;
+        height: 340px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-block: 15px;
+      }
+      h2 {
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        font-size: 30px;
+      }
+      label {
+        font-size: 18px;
+        font-weight: 700;
+        margin-right: 10px;
+      }
+      input {
+        font-size: 16px;
+      }
+      button {
+        padding: 10px 20px;
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        background-color: orangered;
+        color: white;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+      h6 {
+        margin-top: 2rem;
+        padding: 10px;
+        border-radius: 20px;
+        font-size: 25px;
+      }
+    </style>
+    <div>
+    <div class="wrapper content">
       <form action="/signin">
+        <h2>Sign_In</h2>
         <table>
           <tr>
             <td>UserName</td>
@@ -36,9 +75,14 @@
         </table>
         <div class="btn">
           <button type="submit" value="signin">Sign in</button>
+          <div class="forgot">
+            <a href="/changetemp" class="">Change Password</a>
+          </div>
         </div>
       </form>
-      <h5>{{msg}}</h5>
     </div>
+    <h6>{{msg}}</h6>
+  </div>
+    {%endblock%}
   </body>
 </html>
