@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+    }
+  </style>
+  <body>
+    <div class="wrapper">
+      <form action="/signin">
+        <table>
+          <tr>
+            <td>UserName</td>
+            <td><input type="text" name="uname" /></td>
+          </tr>
+          <tr>
+            <td>Password</td>
+            <td><input type="text" name="pwd" /></td>
+          </tr>
+        </table>
+        <div class="btn">
+          <button type="submit" value="signin">Sign in</button>
+        </div>
+      </form>
+      <h5>{{msg}}</h5>
+    </div>
+  </body>
+</html>
