@@ -16,12 +16,9 @@ def signup(request):
     pwd=request.GET['pwd']
     qs=Users.objects.filter(uname=uname)
     if len(qs) == False:
-        if name==0:
-            u=Users(name=name,uname=uname,password=pwd)
-            u.save()
-            msg='User Resistered'
-        else:
-            msg='valid input'
+        u=Users(name=name,uname=uname,password=pwd)
+        u.save()
+        msg='User Resistered'
     else:
         msg='User Exist'
 
@@ -36,12 +33,9 @@ def signin(request):
     uname=request.GET['uname']
     pwd=request.GET['pwd']
     try:
-        if uname==0:
-            msg='invalid input'
-        else:
-            qs=Users.objects.get(uname=uname,password=pwd)
-            response=render(request,'app1/welcome.html',context={'qs':qs,'msg':'Login Successfully  '})
-            return response
+        qs=Users.objects.get(uname=uname,password=pwd)
+        response=render(request,'app1/welcome.html',context={'qs':qs,'msg':'Login Successfully  '})
+        return response
     except:
         response=render(request,'app1/signin.html',context={"msg":'Wrong username and password'})
         return response

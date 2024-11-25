@@ -1,44 +1,44 @@
 {%extends 'app1/index.html'%}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     {%block content%}
     <style>
-        .content{
-            box-shadow: 0 0 20px #202020;
-            border-radius: 20px;
-            width: 340px;
-            height: 340px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-       .form{
+      .content {
+        box-shadow: 0 0 20px #202020;
+        border-radius: 20px;
+        width: 340px;
+        height: 340px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .form {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-block: 15px;
-       }
-       h2{
+      }
+      h2 {
         text-transform: uppercase;
         margin-bottom: 20px;
         font-size: 30px;
-       }
-       label{
+      }
+      label {
         font-size: 18px;
         font-weight: 700;
         margin-right: 10px;
-       }
-       input{
+      }
+      input {
         font-size: 16px;
-       }
-       button{
+      }
+      button {
         padding: 10px 20px;
         border-radius: 10px;
         outline: none;
@@ -46,34 +46,34 @@
         background-color: orangered;
         color: white;
         cursor: pointer;
-       }
-       h6{
+      }
+      h6 {
         margin-top: 2rem;
         padding: 10px;
         border-radius: 20px;
         font-size: 25px;
-       }
+      }
     </style>
     <div class="wrap">
-        <div class="content">
-            <form action="/delete">
-            <h2>Delete user</h2>
+      <div class="content">
+        <form action="/delete">
+          <h2>Delete user</h2>
 
-                <div class="form">
-                    <label for="">UserName</label>
-                    <input type="text" name="uname">
-                </div>
-                <div class="form">
-                    <label for="">Password</label>
-                    <input type="text" name="pwd">
-                </div>
-                <div class="btn">
-                    <button type="submit" value="delete">Delete</button>
-                </div>
-            </form>
-        </div>
-        <h6>{{msg}}</h6>
+          <div class="form">
+            <label for="">UserName</label>
+            <input type="text" name="uname" />
+          </div>
+          <div class="form">
+            <label for="">Password</label>
+            <input type="text" name="pwd" />
+          </div>
+          <div class="btn">
+            <button type="submit" value="delete">Delete</button>
+          </div>
+        </form>
+      </div>
+      <h6>{{msg}}</h6>
     </div>
     {%endblock%}
-</body>
+  </body>
 </html>
