@@ -1,0 +1,42 @@
+{%extends 'app1/index.html'%} {%block content%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="/addemp">
+      <table>
+        <tr>
+          <td>Employee Name</td>
+          <td><input type="text" name="ename" /></td>
+        </tr>
+        <tr>
+          <td>Job</td>
+          <td><input type="text" name="job" /></td>
+        </tr>
+        <tr>
+          <td>Salery</td>
+          <td><input type="text" name="sal" /></td>
+        </tr>
+        <tr>
+            <td>Select Department</td>
+          <td>
+            <select name="deptName">
+            {%for name in dept%}
+              <option value={{name}}>{{name}}</option>
+            {%endfor%}
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="submit" /></td>
+        </tr>
+      </table>
+    </form>
+    {{msg}}
+  </body>
+</html>
+{%endblock%}

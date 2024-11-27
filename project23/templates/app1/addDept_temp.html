@@ -1,0 +1,29 @@
+{%extends 'app1/index.html'%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/department">
+        <table>
+            <tr>
+                <td>Department No.</td>
+                <td><input type="text" name="deptNo"></td>
+            </tr>
+            <tr>
+                <td>Department Name</td>
+                <td><input type="text" name="dname"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="submit"></td>
+            </tr>
+        </table>
+    </form>
+    {{msg}}
+</body>
+</html>
+{%endblock%}
