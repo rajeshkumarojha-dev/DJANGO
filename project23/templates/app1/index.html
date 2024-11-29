@@ -39,26 +39,19 @@
       <div class="content">
         {%block content%}
         <h1>Welcome to home page</h1>
+        <form action="/filterData">
         <table>
           <tr>
             <td>Select Department</td>
           <td>
-            <select name="dept">
-            {%for name in dept%}
-              <option value={{name}}>{{name}}</option>
-            {%endfor%}
+            <select name="depart">
+              <option value='Developer'>Developer</option>
+              <option value='Tester'>Tester</option>
             </select>
           </td>
         </tr>
         </table>
-        <table>
-          {%for i in emp%}
-          <tr>
-            <td>{{i.empName}}</td>
-            <td>{{i.job}}</td>
-            <td>{{i.salery}}</td>
-          </tr>
-        </table>
+      </form>
         {%endblock%}
       </div>
     </div>

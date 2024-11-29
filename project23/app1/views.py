@@ -2,11 +2,7 @@ from django.shortcuts import render
 from app1.models import *
 # Create your views here.
 def home(request):
-    qs=Dept.objects.all()
-    dept=[]
-    for row in qs:
-        dept.append(row.deptName)
-    response=render(request,'app1/index.html',context={'dept':dept})
+    response=render(request,'app1/index.html')
     return response
 
 def departTemp(request):
@@ -49,3 +45,9 @@ def addemp(request):
     response=render(request,'app1/addEmp.html',context={'msg':msg})
     return response
 
+def filterData(request):
+    dname=request.GET['depart']
+    dept=Dept.objects.get(deptName=dname)
+    qs=Employee.objects.filter(dept=dept)
+    response=render(request,'app1/filter.html',context={'qs':qs})
+    return response
